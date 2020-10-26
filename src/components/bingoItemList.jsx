@@ -1,56 +1,37 @@
 import React, { Component } from 'react';
 import BingoItem from './bingoItem';
+import BingoTitle from './bingoTitle';
 
 class BingoItemList extends Component {
     state = {
-        bingoTitle: ' ',
-        bingoItemList: []
+        bingoItems: [
+            { id: 1 },
+            { id: 2 },
+            { id: 3 },
+            { id: 4 },
+            { id: 5 }
+        ]
     };
     render () {
         return ( 
             <div> 
-                <form> 
-                    <input 
-                        type = "text" 
-                        name = "title" 
-                        id = "title"
-                    /> 
-                    <input 
-                        className = "btn btn-danger m-2 btn-block" 
-                        type = "reset" 
-                        value = "Reset" 
-                        name = "Reset" 
-                    /> 
-                </form>
-                <BingoItem/>
-                <BingoItem/>
-                <BingoItem/>
-                <BingoItem/>
-                <BingoItem/>
+                <BingoTitle/>              
+                { this.state.bingoItems.map(bingoItem => 
+                    <BingoItem 
+                        key = {bingoItem.id} 
+                    />)
+                }
+
+                
                 <input 
-                    className = "btn-primary btn-lg" 
-                    type = "submit" 
-                    value = "Done" 
-                    onClick = {this.handleDone}
-                />
-                <input 
-                    className = "btn-success btn-block btn-lg m-2" 
+                    className = "btn btn-primary btn-block btn-lg m-2" 
                     type = "submit" 
                     value = "Submit" 
-                    onClick = {this.handleSubmit}
+                    onClick={() => window.location.reload(false)}
                 />
+                
             </div>
         );
-    }
-
-    handleDone = () => {
-        var bingoTitle = document.getElementById("title").value;
-        this.setState({bingoTitle: bingoTitle});
-        //console.log(this.state.bingoTitle);
-    }
-
-    handleSubmit = () => {
-        console.log("");
     }
 }
 

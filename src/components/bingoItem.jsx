@@ -2,34 +2,42 @@ import React, { Component } from 'react';
 
 
 class BingoItem extends Component {
-    state = {
-        name: " "
-    };
+    
+    //state = {
+    //    value: ''
+    //}
 
     render () {
         return ( <div>
                     <form> 
                         <input 
                             type = "text" 
-                            //value = {this.state.name}
-                            name = "name" 
-                            onChange={e => this.handleInput(e.target.value)}
-
+                            name = "name"      
                         /> 
+                       
                         <input 
                             className = "btn btn-danger m-2" 
                             type = "reset" 
                             value = "Reset" 
                             name = "Reset" 
                         /> 
+                        <input 
+                            type = "button"
+                            className = "btn btn-success m-1" 
+                            value = "Add" 
+                            onClick = {this.handleAdd}
+                            
+                        /> 
                     </form>
                 </div>
         )
     }
 
-    handleInput(value) {
-        this.setState({name: value});
-        //console.log(this.state.name);
+    
+
+    handleAdd = () => {
+        console.log("item added");
+        
     }
 }
 
