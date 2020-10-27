@@ -29,7 +29,21 @@ class BingoItemList extends Component {
                     value = "Submit" 
                     onClick={() => window.location.reload(false)}
                 />
-                
+                <form action = 'http://localhost:5000/' method = 'GET'>
+                    <input 
+                        type = "number" 
+                        min = '1'
+                        name = "id_dl"
+                        id = "id_dl"      
+                    /> 
+                    <input 
+                        className = "btn btn-primary btn-info btn-lg m-2" 
+                        type = "submit" 
+                        value = "Download" 
+                        onClick={() => window.location.reload(false)}
+                    />
+                </form>
+    
             </div>
         );
     }

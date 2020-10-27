@@ -9,10 +9,11 @@ class BingoItem extends Component {
 
     render () {
         return ( <div>
-                    <form> 
+                    <form action = 'http://localhost:5000/' method = 'POST'> 
                         <input 
                             type = "text" 
-                            name = "name"      
+                            name = "content"   
+                            id = "content"   
                         /> 
                        
                         <input 
@@ -22,22 +23,14 @@ class BingoItem extends Component {
                             name = "Reset" 
                         /> 
                         <input 
-                            type = "button"
+                            type = "submit"
                             className = "btn btn-success m-1" 
                             value = "Add" 
-                            onClick = {this.handleAdd}
                             
                         /> 
                     </form>
                 </div>
         )
-    }
-
-    
-
-    handleAdd = () => {
-        console.log("item added");
-        
     }
 }
 
