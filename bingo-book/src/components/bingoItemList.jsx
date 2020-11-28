@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class BingoItemList extends Component {
     state = {
+        title = null,
         bingoItems = []
     }
     
