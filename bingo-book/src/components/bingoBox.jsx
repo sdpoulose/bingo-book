@@ -5,7 +5,7 @@ class BingoBox extends Component {
     render () {
         return (
             <form>
-                <input type="text"/> 
+                <input type="text" placeholder="Enter Bingo Item"/> 
             </form>
         );
     }
