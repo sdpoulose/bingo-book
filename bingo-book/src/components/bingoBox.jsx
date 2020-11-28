@@ -2,11 +2,18 @@ import React, { Component } from "react";
 import BingoItemList from "./bingoItemList";
 
 class BingoBox extends Component {
-    state = {}
+    state = {
+        title: "",
+        items: []
+    };
 
     handleItemAddition(event) {
         if(event.key === "Enter"){
             console.log("Item Added");
+            let input = document.getElementById("item").nodeValue;
+            console.log(input);
+            //this.setState({itmes: [...this.state.items, input] });
+            //console.log(this.state.items);
         }    
     }
 
