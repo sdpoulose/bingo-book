@@ -2,12 +2,22 @@ import React, { Component } from "react";
 
 class BingoBox extends Component {
     state = {}
+
+    handleItemAddition(event) {
+        if(event.key === "Enter"){
+            console.log("Item Added");
+        }
+        
+    }
+
     render () {
         return (
-            <form>
-                <input type="text" placeholder="Enter Bingo Item"/> 
-            </form>
-        );
+            <input 
+                onKeyPress={this.handleItemAddition} 
+                type="text" 
+                placeholder="Enter"
+            />
+        );      
     }
 }
 
