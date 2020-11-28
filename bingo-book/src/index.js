@@ -1,5 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import BingoBox from "./components/bingoBox";
 
-const helloWorld = <h1>Hello World</h1>
-ReactDOM.render(helloWorld, document.getElementById('root'));
+ReactDOM.render(<BingoBox/>, document.getElementById('root'));
