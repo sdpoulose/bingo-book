@@ -4,11 +4,11 @@ class BingoItemList extends Component {
     state = {
         bingoItems: []
     };
-    
-    render () {
+
+    render() {
         return (
-            <ul> {this.state.bingoItems.map(tag => <li key = {tag}>{tag}</li>)}</ul>
-        );      
+            <ul> {this.state.bingoItems.map(tag => <li key={tag}>{tag}</li>)}</ul>
+        );
     }
 }
 
