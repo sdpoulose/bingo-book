@@ -9,12 +9,13 @@ class BingoBox extends Component {
 
     handleItemAddition(event) {
         if (event.key === "Enter") {
-            console.log("Item Added");
-            let input = document.getElementById("item").nodeValue;
-            console.log(input);
-            //this.setState({itmes: [...this.state.items, input] });
-            //console.log(this.state.items);
+            console.log("Item Entered");
         }
+    }
+
+    addItem() {
+        //var item = getElementById("itemToEnter");
+        console.log("Item Added");
     }
 
     render() {
@@ -22,15 +23,18 @@ class BingoBox extends Component {
             <React.Fragment>
                 <input
                     onKeyPress={this.handleItemAddition}
-                    id="item"
+                    id="itemToEnter"
                     type="text"
                     placeholder="Enter"
                 />
-                <button className="m-2"> Add </button>
+                <button className="m-2" onClick={this.addItem}> Add </button>
                 <BingoItemList />
             </React.Fragment>
         );
     }
+
 }
+
+
 
 export default BingoBox;
