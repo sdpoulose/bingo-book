@@ -3,19 +3,25 @@ import BingoItemList from "./bingoItemList";
 
 class BingoBox extends Component {
     state = {
-        title: "",
         items: []
     };
 
-    handleItemAddition(event) {
+    handleItemAddition = (event) => {
         if (event.key === "Enter") {
             console.log("Item Entered");
+            var item = event.target.value;
+            console.log(item)
+            this.setState({
+                items: [...this.state.items, item]
+            });
+            document.getElementById("item").value = "";
         }
     }
 
-    addItem() {
-        //var item = getElementById("itemToEnter");
+    handleItemEnter() {
         console.log("Item Added");
+        var item = document.getElementById(item);
+        console.log(item)
     }
 
     render() {
@@ -23,11 +29,11 @@ class BingoBox extends Component {
             <React.Fragment>
                 <input
                     onKeyPress={this.handleItemAddition}
-                    id="itemToEnter"
+                    id="item"
                     type="text"
                     placeholder="Enter"
                 />
-                <button className="m-2" onClick={this.addItem}> Add </button>
+                <button className="m-2" onClick={this.handleItemEnter}> Add </button>
                 <BingoItemList />
             </React.Fragment>
         );
