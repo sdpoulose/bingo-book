@@ -1,27 +1,31 @@
 import React, { Component } from "react";
-import BingoItemList from "./bingoItemList";
+import BingoItem from "./bingoItem";
 
 class BingoBox extends Component {
     state = {
-        items: []
+        items: [
+            { id: 0, value: 0 }
+        ]
     };
 
     handleItemAddition = (event) => {
         if (event.key === "Enter") {
             console.log("Item Entered");
             var item = event.target.value;
-            console.log(item)
+            var last = this.state.items[this.state.items.length - 1].id + 1;
+
             this.setState({
-                items: [...this.state.items, item]
+                items: [...this.state.items, { id: last, value: item }]
             });
             document.getElementById("item").value = "";
+
         }
     }
 
-    handleItemEnter() {
+    handleItemEnter = () => {
         console.log("Item Added");
         var item = document.getElementById(item);
-        console.log(item)
+        console.log(this.state.items);
     }
 
     render() {
@@ -33,8 +37,9 @@ class BingoBox extends Component {
                     type="text"
                     placeholder="Enter"
                 />
-                <button className="m-2" onClick={this.handleItemEnter}> Add </button>
-                <BingoItemList />
+                <button className="btn btn-primary m-2" onClick={this.handleItemEnter}> Add </button>
+                {this.state.items.map(item =>
+                    <BingoItem key={item.id} value={item.value} selected={true} />)}
             </React.Fragment>
         );
     }
