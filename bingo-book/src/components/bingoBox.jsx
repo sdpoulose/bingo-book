@@ -4,7 +4,7 @@ import BingoItem from "./bingoItem";
 class BingoBox extends Component {
     state = {
         items: [
-            { id: 0, value: 0 }
+            0
         ]
     };
 
@@ -15,7 +15,7 @@ class BingoBox extends Component {
             var last = this.state.items[this.state.items.length - 1].id + 1;
 
             this.setState({
-                items: [...this.state.items, { id: last, value: item }]
+                items: [...this.state.items, item]
             });
             document.getElementById("item").value = "";
 
