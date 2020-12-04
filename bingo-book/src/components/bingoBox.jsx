@@ -4,8 +4,9 @@ import BingoItem from "./bingoItem";
 class BingoBox extends Component {
     state = {
         items: [
-            0
+            ""
         ]
+
     };
 
     handleItemAddition = (event) => {
@@ -28,6 +29,10 @@ class BingoBox extends Component {
         console.log(this.state.items);
     }
 
+    styles = {
+        listStyleType: 'none'
+    };
+
     render() {
         return (
             <React.Fragment>
@@ -38,7 +43,7 @@ class BingoBox extends Component {
                     placeholder="Enter"
                 />
                 <button className="btn btn-primary m-2" onClick={this.handleItemEnter}> Add </button>
-                <ol>
+                <ol style={this.styles}>
                     {this.state.items.map(item => <li> <BingoItem item={item} /></li>)}
                 </ol>
             </React.Fragment>
