@@ -38,7 +38,9 @@ class BingoBox extends Component {
                     placeholder="Enter"
                 />
                 <button className="btn btn-primary m-2" onClick={this.handleItemEnter}> Add </button>
-
+                <ol>
+                    {this.state.items.map(item => <li> <BingoItem item={item} /></li>)}
+                </ol>
             </React.Fragment>
         );
     }

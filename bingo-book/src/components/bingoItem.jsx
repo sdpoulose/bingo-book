@@ -7,7 +7,7 @@ class BingoItem extends Component {
     };
 
     render() {
-        return;
+        return <h1> {this.props.item}</h1>;
     }
 }
 
