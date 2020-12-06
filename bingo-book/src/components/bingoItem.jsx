@@ -16,6 +16,7 @@ class BingoItem extends Component {
             return <button className="m-2 btn btn-success">{item}</button>;
         }
         else {
+
             return <h1> </h1>
         }
     }
