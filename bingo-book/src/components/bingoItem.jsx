@@ -7,13 +7,13 @@ class BingoItem extends Component {
     };
 
     render() {
-        return this.createItem(this.props.item);
+        return this.createItem(this.props.item, this.props.index);
         //<button className="m-2 btn btn-success"> {this.props.item}</button>;
     }
 
-    createItem = (item) => {
+    createItem = (item, index) => {
         if (item != '') {
-            return <button className="m-2 btn btn-success">{item}</button>;
+            return <button className="m-2 btn btn-success">{index} {item}</button>;
         }
         else {
 

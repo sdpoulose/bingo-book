@@ -4,7 +4,7 @@ import BingoItem from "./bingoItem";
 class BingoBox extends Component {
     state = {
         items: [
-            ""
+            { item: "", index: 0 }
         ]
 
     };
@@ -13,10 +13,11 @@ class BingoBox extends Component {
         if (event.key === "Enter") {
             console.log("Item Entered");
             var item = event.target.value;
-            var last = this.state.items[this.state.items.length - 1].id + 1;
-
+            var last = 0;
+            last = this.state.items[this.state.items.length - 1].index + 1;
+            //console.log(last);
             this.setState({
-                items: [...this.state.items, item]
+                items: [...this.state.items, { item: item, index: last }]
             });
             document.getElementById("item").value = "";
 
@@ -44,7 +45,7 @@ class BingoBox extends Component {
                 />
                 <button className="btn btn-primary m-2" onClick={this.handleItemEnter}> Add </button>
                 <ol style={this.styles}>
-                    {this.state.items.map(item => <li> <BingoItem item={item} /></li>)}
+                    {this.state.items.map(item => <li> <BingoItem item={item.item} index={item.index} /></li>)}
                 </ol>
             </React.Fragment>
         );
