@@ -13,7 +13,7 @@ class BingoItem extends Component {
 
     createItem = (item, index) => {
         if (item != '') {
-            return <button className="m-2 btn btn-success">{index} {item}</button>;
+            return <button className="m-2 btn btn-warning">{index} {item}</button>;
         }
         else {
 

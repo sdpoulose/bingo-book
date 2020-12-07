@@ -43,10 +43,11 @@ class BingoBox extends Component {
                     type="text"
                     placeholder="Enter"
                 />
-                <button className="btn btn-primary m-2" onClick={this.handleItemEnter}> Add </button>
+                <button className="btn btn-outline-primary m-2" onClick={this.handleItemEnter}> Add </button>
                 <ol style={this.styles}>
                     {this.state.items.map(item => <li> <BingoItem item={item.item} index={item.index} /></li>)}
                 </ol>
+                <button className="btn btn-outline-success btn-block m-2"> Create </button>
             </React.Fragment>
         );
     }
