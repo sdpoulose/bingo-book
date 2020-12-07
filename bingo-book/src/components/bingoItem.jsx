@@ -12,13 +12,17 @@ class BingoItem extends Component {
     }
 
     createItem = (item, index) => {
-        if (item != '') {
-            return <button className="m-2 btn btn-warning">{index} {item}</button>;
+        if (item !== '') {
+            return <button className="m-2 btn btn-warning">{index} {item} <span onClick={this.handleDelete}> &#x274C; </span></button>;
         }
         else {
 
             return <h1> </h1>
         }
+    }
+
+    handleDelete() {
+        console.log("Item will be deleted");
     }
 }
 

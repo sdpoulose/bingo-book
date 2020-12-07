@@ -47,7 +47,7 @@ class BingoBox extends Component {
                 <ol style={this.styles}>
                     {this.state.items.map(item => <li> <BingoItem item={item.item} index={item.index} /></li>)}
                 </ol>
-                <button className="btn btn-outline-success btn-block m-2"> Create </button>
+                <button className="btn btn-lg btn-outline-success btn-block m-2"> Create </button>
             </React.Fragment>
         );
     }
