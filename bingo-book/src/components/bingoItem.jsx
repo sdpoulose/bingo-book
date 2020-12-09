@@ -25,9 +25,6 @@ class BingoItem extends Component {
         console.log("Item will be deleted");
     }
 
-    deletionHandler() {
-        console.log("item deletion signal recieved from child");
-    }
 }
 
 export default BingoItem;

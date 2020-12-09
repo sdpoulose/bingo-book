@@ -30,6 +30,10 @@ class BingoBox extends Component {
         console.log(this.state.items);
     }
 
+    deletionHandler() {
+        console.log("item deletion signal recieved from child");
+    }
+
     styles = {
         listStyleType: 'none'
     };
