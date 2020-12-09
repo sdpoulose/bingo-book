@@ -33,6 +33,13 @@ class BingoBox extends Component {
     deletionHandler = (id) => {
         console.log("item deletion signal recieved from child");
         console.log(id);
+        console.log(typeof (id.index));
+        var newArray = this.state.items;
+        newArray.splice(id.index, 1);
+
+
+        this.setState({ items: newArray });
+
     }
 
     styles = {
