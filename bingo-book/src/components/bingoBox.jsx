@@ -37,6 +37,10 @@ class BingoBox extends Component {
         var newArray = this.state.items;
         newArray.splice(id.index, 1);
 
+        for (var i = id.index; i < newArray.length; i++) {
+            newArray[i].index -= 1;
+        }
+
 
         this.setState({ items: newArray });
 
