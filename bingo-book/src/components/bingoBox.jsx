@@ -30,7 +30,7 @@ class BingoBox extends Component {
         console.log(this.state.items);
     }
 
-    deletionHandler() {
+    deletionHandler = () => {
         console.log("item deletion signal recieved from child");
     }
 
@@ -49,7 +49,7 @@ class BingoBox extends Component {
                 />
                 <button className="btn btn-outline-primary m-2" onClick={this.handleItemEnter}> Add </button>
                 <ol style={this.styles}>
-                    {this.state.items.map(item => <li> <BingoItem item={item.item} index={item.index} /></li>)}
+                    {this.state.items.map(item => <li> <BingoItem item={item.item} index={item.index} deletionHandler={this.deletionHandler} /></li>)}
                 </ol>
                 <button className="btn btn-lg btn-outline-success btn-block m-2"> Create </button>
             </React.Fragment>

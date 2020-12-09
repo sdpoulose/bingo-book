@@ -13,7 +13,7 @@ class BingoItem extends Component {
 
     createItem = (item, index) => {
         if (item !== '') {
-            return <button className="m-2 btn btn-warning">{index} {item} <span onClick={this.handleDelete}> &#x274C; </span></button>;
+            return <button className="m-2 btn btn-warning">{index} {item} <span onClick={() => this.props.deletionHandler()}> &#x274C; </span></button>;
         }
         else {
 
