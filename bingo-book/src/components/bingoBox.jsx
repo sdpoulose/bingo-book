@@ -16,10 +16,13 @@ class BingoBox extends Component {
             var last = 0;
             last = this.state.items[this.state.items.length - 1].index + 1;
             //console.log(last);
-            this.setState({
-                items: [...this.state.items, { item: item, index: last }]
-            });
-            document.getElementById("item").value = "";
+            if (item != '') {
+                this.setState({
+                    items: [...this.state.items, { item: item, index: last }]
+                });
+                document.getElementById("item").value = "";
+            }
+
 
         }
     }
