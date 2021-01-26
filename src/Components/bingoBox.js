@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import BingoItem from "./bingoItem";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class BingoBox extends Component {
     state = {
