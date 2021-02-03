@@ -19,4 +19,8 @@ app.get('/', (req, res) => {
     res.send("Hello World!")
 });
 
+const cardsRouter = require('./routes/cards');
+
+app.use('./cards', cardsRouter);
+
 app.listen(3000, () => console.log("Server started on Port 3000"));
