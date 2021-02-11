@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const mongoose = require('mongoose');
 
 require('dotenv').config();
@@ -24,3 +24,5 @@ const cardsRouter = require('./routes/cards');
 app.use('./cards', cardsRouter);
 
 app.listen(3000, () => console.log("Server started on Port 3000"));
+
+*/

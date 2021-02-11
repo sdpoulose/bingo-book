@@ -1,4 +1,4 @@
-const router = require('express').Router();
+/* const router = require('express').Router();
 
 let Card = require('../models/card.model');
 
@@ -8,3 +8,4 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+*/
