@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BingoItem from "./bingoItem";
 import Header from "./header";
+import SideBar from "./sideBar"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -64,6 +65,7 @@ class BingoBox extends Component {
         return (
             <React.Fragment>
                 <Header />
+                <SideBar />
                 <input
                     onKeyPress={this.handleItemAddition}
                     id="item"
