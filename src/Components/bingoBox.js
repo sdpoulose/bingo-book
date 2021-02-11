@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BingoItem from "./bingoItem";
+import Header from "./header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -62,6 +63,7 @@ class BingoBox extends Component {
     render() {
         return (
             <React.Fragment>
+                <Header />
                 <input
                     onKeyPress={this.handleItemAddition}
                     id="item"
