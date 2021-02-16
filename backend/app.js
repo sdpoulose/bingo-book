@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-import Card from './models/card.model';
+const Card = require('./models/card.model');
 
 // CONFIG
 const app = express();
