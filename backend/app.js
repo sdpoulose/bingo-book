@@ -1,12 +1,16 @@
+// IMPORTS
 const express = require('express');
 const mongoose = require('mongoose');
-
 require('dotenv').config();
 
+// CONFIG
 const app = express();
+const port = process.env.PORT || 3000;
 
+// MIDDLEWARE
 app.use(express.json());
 
+// DB CONFIG 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
 
@@ -16,9 +20,10 @@ connection.once('open', () => {
     console.log("connection to MongoDB database has been established succesfully");
 })
 
-//ROUTES
+// ENDPOINTS
 app.get('/', (req, res) => {
     res.send("Hello World!")
 });
 
-app.listen(3000, () => console.log("Server started on Port 3000"));
+// LISTENER
+app.listen(port, () => console.log(`Server started on Port ${port}`));
