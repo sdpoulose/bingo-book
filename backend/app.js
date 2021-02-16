@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+import Card from './models/card.model';
+
 // CONFIG
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,6 +25,27 @@ connection.once('open', () => {
 // ENDPOINTS
 app.get('/', (req, res) => {
     res.send("Hello World!")
+});
+
+app.post('/cards', (req, res) => {
+    const dbCard = req.body;
+    Card.create(dbCard, (err, data) => {
+        if (err) {
+            res.status(500).send(err)
+        } else {
+            res.status(201).send(data)
+        }
+    });
+});
+
+app.get('/cards', (req, res) => {
+    Card.find((err, data) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).send(data);
+        }
+    });
 });
 
 // LISTENER
